@@ -117,9 +117,9 @@ The QAgent MVP should follow this same package shape:
 - The tool exposes one callable operation.
 - The tool returns compact structured output.
 
-For QAgent, the hello-world `execute()` body will be replaced with runner logic
-that invokes the published `qagent` CLI flow and routes pi-dev model/auth into
-that run.
+For QAgent, the hello-world `execute()` body is replaced with runner logic that
+calls QAgent's public `runQAgent()` API and routes pi-dev model/auth into that
+run.
 
 ## Sources
 

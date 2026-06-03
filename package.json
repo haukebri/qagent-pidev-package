@@ -1,7 +1,7 @@
 {
   "name": "qagent-pidev-package",
   "version": "0.0.1",
-  "description": "Pi package for QAgent tools, starting with a hello-world smoke test.",
+  "description": "Pi package for QAgent tools using Pi model authentication.",
   "type": "module",
   "keywords": [
     "pi-package",
@@ -12,8 +12,11 @@
       "./extensions"
     ]
   },
+  "engines": {
+    "node": ">=22.19.0"
+  },
   "dependencies": {
-    "@qagent/cli": "0.6.0"
+    "@qagent/cli": "0.6.1"
   },
   "peerDependencies": {
     "@earendil-works/pi-ai": "*",

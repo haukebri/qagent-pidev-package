@@ -1,6 +1,6 @@
 # QAgent Pi Package Project Overview
 
-Status: revised 2026-06-02.
+Status: revised 2026-06-03.
 
 ## Purpose
 
@@ -13,12 +13,13 @@ runner available to Pi agents without changing QAgent's direct CLI usage.
 
 ## MVP
 
-The MVP is a Pi tool that exposes the existing QAgent CLI flow.
+The MVP is a Pi tool that exposes QAgent's public runner API.
 
 Pi agents should be able to call the tool with the same core inputs a CLI user
 would provide: URL, goal, run limits, and headed/headless preference. The tool
-then runs QAgent as a single-goal checker and returns a compact structured result
-with outcome, evidence, turn count, elapsed time, and final URL.
+then calls `runQAgent()` as a single-goal checker and returns a compact
+structured result with outcome, evidence, turn count, elapsed time, and final
+URL.
 
 The key difference from direct CLI usage is authentication and model selection:
 in the pi-dev flow, QAgent should use the LLM model and credentials supplied by
@@ -39,13 +40,16 @@ inspect the path with Playwright before giving the final verdict.
 ## Boundaries
 
 - QAgent remains a single-goal CLI checker.
-- This package should not copy or reimplement QAgent's browser runner.
+- This package should not copy or reimplement QAgent's browser runner, and it
+  should not shell out to the QAgent CLI for Pi-authenticated runs.
 - The MVP is the Pi tool, not the skill.
 - The future skill uses the MVP tool; it does not add multi-goal behavior to
   QAgent itself.
 - QAgent's standalone npm/CLI usage remains valid for non-Pi users.
 - pi-dev owns model selection and authentication for QAgent runs launched through
   this package.
+- This package imports only QAgent's public `runQAgent()` API, not QAgent
+  browser, tool, executor, verifier, or reporter internals.
 
 ## References
 
