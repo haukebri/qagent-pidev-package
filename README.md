@@ -4,7 +4,6 @@ Pi package for QAgent.
 
 ## Tools
 
-- `hello_world`: smoke-tests Pi model/auth access.
 - `qagent_run`: runs QAgent's public runner API with one URL and one
   natural-language verification goal, using Pi's active model and credentials.
 
