@@ -7,6 +7,10 @@
     "pi-package",
     "qagent"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haukebri/qagent-pidev-package.git"
+  },
   "pi": {
     "extensions": [
       "./extensions"

@@ -7,7 +7,7 @@ QAgent browser checks and brings back compact verdicts with evidence, final
 URLs, and the details your coding session can act on.
 
 <p align="center">
-  <img src="readme_header.png" alt="QAgent for Pi headline showing natural-language browser QA inside Pi" width="1100">
+  <img src="https://raw.githubusercontent.com/haukebri/qagent-pidev-package/main/readme_header.png" alt="QAgent for Pi headline showing natural-language browser QA inside Pi" width="1100">
 </p>
 
 ## Install
