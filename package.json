@@ -1,6 +1,6 @@
 {
   "name": "@qagent/pidev-package",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Pi package for QAgent tools using Pi model authentication.",
   "type": "module",
   "keywords": [
