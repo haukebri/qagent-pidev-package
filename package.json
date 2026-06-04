@@ -1,5 +1,5 @@
 {
-  "name": "qagent-pidev-package",
+  "name": "@qagent/pidev-package",
   "version": "0.0.1",
   "description": "Pi package for QAgent tools using Pi model authentication.",
   "type": "module",
