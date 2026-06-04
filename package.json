@@ -1,7 +1,7 @@
 {
   "name": "@qagent/pidev-package",
   "version": "0.1.1",
-  "description": "Pi package for QAgent tools using Pi model authentication.",
+  "description": "Let Pi QA your web app in a real browser and return evidence-backed pass/fail checks.",
   "type": "module",
   "keywords": [
     "pi-package",

@@ -1,14 +1,24 @@
 # QAgent for Pi
 
-### Natural-language browser QA inside Pi
+### Let Pi test your web app in a real browser.
 
-Ask Pi to verify a web app. The `qagent` skill turns that request into focused
-QAgent browser checks and brings back compact verdicts with evidence, final
-URLs, and the details your coding session can act on.
+Install this package, then ask Pi to verify a page, form, or user flow. The
+`qagent` skill turns that request into focused browser checks and reports what
+passed, what failed, and the evidence behind the verdict.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/haukebri/qagent-pidev-package/main/readme_header.png" alt="QAgent for Pi headline showing natural-language browser QA inside Pi" width="1100">
 </p>
+
+## What This Does
+
+QAgent for Pi gives your Pi coding session a QA helper. It can open a local or
+deployed web app, interact with the page, check for visible success signals, and
+summarize the result as pass, fail, or unknown.
+
+Use it when you have just changed a UI and want an independent browser check
+before calling the work done. You describe the outcome in plain language; Pi
+uses QAgent to drive the browser and returns a compact, evidence-backed result.
 
 ## Install
 
@@ -35,23 +45,35 @@ You do not need to learn a new command syntax. After installing the package,
 ask Pi for QA in plain language:
 
 ```text
-Use qagent to smoke-test http://localhost:3000.
+Use qagent to verify http://localhost:3000 loads and the main dashboard is usable.
 ```
 
 ```text
-Use qagent to verify the signup form works and report evidence.
+Use qagent to test the signup form. Success means the confirmation message appears.
 ```
 
 ```text
-Use qagent to check the feature I just changed.
+Use qagent to check the checkout flow reaches the order confirmation page.
 ```
 
 ```text
-Use qagent against http://localhost:5173 and confirm the checkout flow reaches
-the order confirmation screen.
+Use qagent to check the feature I just changed and report what still looks broken.
 ```
 
-## What Happens
+## When To Use It
+
+Use QAgent for Pi when you want a quick answer to questions like:
+
+- Did the page I just changed still load?
+- Does this form actually submit?
+- Does the success text appear after the user flow?
+- Did my fix remove the visible regression?
+- Is there an obvious broken state before I hand this back?
+
+Keep Playwright or your normal test suite for durable regression coverage. Use
+QAgent for fast, goal-based checks while you are still building.
+
+## How It Works
 
 Pi stays in charge of the development session. The `qagent` skill acts like a
 concise senior QA reviewer:
@@ -66,23 +88,6 @@ The important difference from the standalone `@qagent/cli` is authentication and
 model selection. In Pi, QAgent uses Pi's active model and credentials. You do not
 need a separate QAgent API key, provider config, or credential store for runs
 launched through this package.
-
-## Why Use It
-
-Coding agents can drive browsers directly, but it often bloats the working
-context and mixes implementation with verification. QAgent runs the browser QA
-loop separately and returns the result as short, usable evidence.
-
-Use it when you want to know:
-
-- Did the page I just changed still load?
-- Does this form actually submit?
-- Does the success text appear after the user flow?
-- Did my fix remove the visible regression?
-- Is there an obvious broken state before I hand this back?
-
-Keep Playwright or your normal test suite for durable regression coverage. Use
-QAgent for fast, goal-based checks while you are still building.
 
 ## Good Prompts
 
