@@ -13,7 +13,7 @@ URLs, and the details your coding session can act on.
 ## Install
 
 ```bash
-pi install npm:qagent-pidev-package
+pi install npm:@qagent/pidev-package
 ```
 
 For local development from this checkout:
