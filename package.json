@@ -1,6 +1,6 @@
 {
   "name": "@qagent/pidev-package",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Let Pi QA your web app in a real browser and return evidence-backed pass/fail checks.",
   "type": "module",
   "keywords": [
